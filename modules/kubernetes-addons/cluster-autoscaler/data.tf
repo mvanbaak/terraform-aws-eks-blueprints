@@ -5,12 +5,13 @@ data "aws_iam_policy_document" "cluster_autoscaler" {
     resources = ["*"]
 
     actions = [
-      "autoscaling:DescribeAutoScalingGroups",
       "autoscaling:DescribeAutoScalingInstances",
-      "autoscaling:DescribeLaunchConfigurations",
+      "autoscaling:DescribeAutoScalingGroups",
+      "autoscaling:DescribeScalingActivities",
+      "ec2:DescribeLaunchTemplateVersions",
       "autoscaling:DescribeTags",
-      "ec2:DescribeInstanceTypes",
-      "ec2:DescribeLaunchTemplateVersions"
+      "autoscaling:DescribeLaunchConfigurations",
+      "ec2:DescribeInstanceTypes"
     ]
   }
 
